@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<!-- The width=device-width part sets the width of the page to follow the screen-width of the device (which will vary depending on the device).
+	The initial-scale=1 part sets the initial zoom level when the page is first loaded by the browser. -->
+	<title>Navigation</title>
+	<link href="fontawesome-web/css/all.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="bootstrap-4.0.0/dist/css/bootstrap.css">
+	<script type="text/javascript" src="bootstrap-4.0.0/dist/js/jquery.js"></script>
+	<script type="text/javascript" src="bootstrap-4.0.0/dist/js/popper.js"></script>
+	<script type="text/javascript" src="bootstrap-4.0.0/dist/js/bootstrap.js"></script>
+	<!-- Bootstrap 4 use jQuery and Popper.js for JavaScript components (like modals, tooltips, popovers etc). However, if you just use the CSS part of Bootstrap, you don't need them. -->
+<style type="text/css">
+<body style="height:1500px">
+
+</style>
+</head>
+<body>	
+
+	<!-- <div class="container-fluid bg-dark"> -->  <!-- In Continer sticky-top Is Not Work -->
+		<!-- <div class="container" -->
+			<nav class="navbar navbar-expand-md bg-dark navbar-dark "> <!-- fixed-top/sticky-top Navigation Fixed-->
+			<!-- A standard navigation bar is created with the .navbar class.  Remove the .navbar-expand-xl|lg|md|sm class to create a vertical navigation bar: -->
+			<!-- .justify-content-center class to center the navigation bar. -->
+			<a href="#" class="navbar-brand"><img src="images/logo7.png" class="img-fluid" width="120"></a>
+			<button class="navbar-toggler justify-content-left" type="button" data-toggle="collapse" data-target="#naviMenu">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+				<div class="collapse navbar-collapse  justify-content-right" id="naviMenu">
+					<ul class="navbar-nav"><!-- To add links inside the navbar, use a <ul> element with class="navbar-nav". Then add <li> elements with a .nav-item class followed by an <a> element with a .nav-link class: -->
+						<li class="nav-item active">	
+							<a href="#" class="nav-link "><i class="fa fa-home"></i> Home </a>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link"><i class="fab fa-css3-alt"></i> About </a>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link"><i class="fa fa-cogs"></i> Portfolio </a>
+						</li>
+						<li class="nav-item dropdown ">
+							<a href="#" class="nav-link dropdown-toggle" id="navdrop" data-toggle="dropdown"><i class="fab fa-angellist"></i> Services </a>
+								<div class="dropdown-menu bg-secondary pl-4">
+									<a href="#" class="nav-link pb-4"><i class="fa fa-filter"></i> Connect </a>
+									<a href="#" class="nav-link pb-4"><i class="fa fa-map"></i> Email </a>
+									<a href="#" class="nav-link pb-4"><i class="fa fa-hashtag"></i> Strength </a>
+								</div>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link"><i class="fa fa-address-book"></i> Contact Us </a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+<!-- 		</div>
+	</div> -->
+	
+</body>
+</html>
