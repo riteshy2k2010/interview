@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<link href="fontawesome-web/css/all.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="bootstrap-4.0.0/dist/css/bootstrap.css">
+	<script type="text/javascript" src="bootstrap-4.0.0/dist/js/jquery.js"></script>
+	<script type="text/javascript" src="bootstrap-4.0.0/dist/js/popper.js"></script>
+	<script type="text/javascript" src="bootstrap-4.0.0/dist/js/bootstrap.js"></script>
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.hero-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("images/1280.jpg");
+  height:calc(100% - 86px);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.hero-text button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 10px 25px;
+  color: black;
+  background-color: #ddd;
+  text-align: center;
+  cursor: pointer;
+}
+
+.hero-text button:hover {
+  background-color: #555;
+  color: white;
+}
+/*.justify-content-end {
+    -ms-flex-pack: end !important;
+    justify-content: flex-end !important;
+}*/
+</style>
+</head>
+<body>
+	<header>
+		<nav class="navbar navbar-expand-md bg-dark navbar-dark "> <!-- fixed-top/sticky-top Navigation Fixed-->
+			<!-- A standard navigation bar is created with the .navbar class.  Remove the .navbar-expand-xl|lg|md|sm class to create a vertical navigation bar: -->
+			<!-- .justify-content-center class to center the navigation bar. -->
+			<a href="#" class="navbar-brand"><img src="images/logo7.png" class="img-fluid" width="120"></a>
+			<button class="navbar-toggler justify-content-left" type="button" data-toggle="collapse" data-target="#naviMenu">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="container collapse navbar-collapse  justify-content-right" id="naviMenu">
+				<ul class="navbar-nav justify-content-end"><!-- To add links inside the navbar, use a <ul> element with class="navbar-nav". Then add <li> elements with a .nav-item class followed by an <a> element with a .nav-link class: -->
+					<li class="nav-item active">	
+						<a href="#" class="nav-link "><i class="fa fa-home"></i> Home </a>
+					</li>
+					<li class="nav-item">
+						<a href="#" class="nav-link"><i class="fab fa-css3-alt"></i> About </a>
+					</li>
+					<li class="nav-item">
+						<a href="#" class="nav-link"><i class="fa fa-cogs"></i> Portfolio </a>
+					</li>
+					<li class="nav-item dropdown ">
+						<a href="#" class="nav-link dropdown-toggle" id="navdrop" data-toggle="dropdown"><i class="fab fa-angellist"></i> Services </a>
+							<div class="dropdown-menu bg-secondary pl-4">
+								<a href="#" class="nav-link pb-4"><i class="fa fa-filter"></i> Connect </a>
+								<a href="#" class="nav-link pb-4"><i class="fa fa-map"></i> Email </a>
+								<a href="#" class="nav-link pb-4"><i class="fa fa-hashtag"></i> Strength </a>
+							</div>
+					</li>
+					<li class="nav-item">
+						<a href="#" class="nav-link"><i class="fa fa-address-book"></i> Contact Us </a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+	<div class="hero-image">
+	  <div class="hero-text">
+	    <h1 style="font-size:50px">I am John Doe</h1>
+	    <p>And I'm a Photographer</p>
+	    <button>Hire me</button>
+	  </div>
+	</div>
+
+
+
+</body>
+</html>
