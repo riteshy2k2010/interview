@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="icon" href="images/geo-logo.png" type="image/gif" sizes="150x150">
+	<title>Page</title>
+	<meta charset="utf-8">
+	<!-- Define keywords for search engines: -->
+	<meta name="keywords" content="HTML, CSS, JavaScript">	
+	<!-- Define a description of your web page -->
+	<meta name="description" content="Free Web tutorials for HTML and CSS">
+	<!--Define the author of a page: -->
+	<meta name="author" content="John Doe">
+	<!-- Refresh document every 30 seconds: -->
+	<!-- <meta http-equiv="refresh" content="30"> -->
+	<!-- Setting the viewport to make your website look good on all devices: -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" >
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<style type="text/css">
+	*{
+    font-family: 'PT Sans', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    padding: 0;
+    margin: 0;
+}
+
+:root{
+    --primary-color:#6ab2ff ;
+    --secondry-color: #dc2727;
+    --bg-color:#f5f5f5;
+    --anchor-color:#383838;
+    --white-color:#fff;
+    --black-color:#000;
+}
+.toggle{
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #000;
+    cursor: pointer;
+    z-index: 1;
+}
+.toggle:before{
+    content: "+";
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 50px;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50%;
+    background-color: #000;
+    transition: 1s;
+    font-weight: bold;
+}
+
+.toggle.active:before{
+    transform: rotate(850deg);
+    background-color: #fff;
+    color: red;
+}
+.overlay{
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgba(0,0,0,.80);
+    transition: transform 0.5s;
+}
+.overlay.active{
+    transform:scale(100, 100);
+}
+.menu{
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    z-index: 1;
+    visibility: hidden;
+}
+.menu.active{
+    visibility: visible;
+    transition-delay: 0.5s;
+}
+.menu ul{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50% );
+    margin: 0;
+    padding: 0;
+}
+.menu ul li{
+    list-style: none;
+
+}
+.menu ul li a{
+    position: relative;
+    font-size:  2.5rem;
+    text-decoration: none;
+    color: #fff;
+    margin:20px 0;
+    display: block;
+    font-weight: bold;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.5)
+
+}
+.menu ul li a:before{
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: -20px;
+    width: 100%;
+    height: 20px;
+    background-color: #ffeb3b;
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s;
+
+}
+.menu ul li a:hover:before{
+    transform: scaleX(1);
+}
+
+.slider{
+     background: url('../images/1.png');
+     background-size: cover;
+     height: 100vh;
+}
+</style>
+<body>
+<div class="toggle"></div>
+<div class="overlay"></div>
+<div class="menu">
+	<ul>
+		<li><a href="#">Home</a> </li>
+		<li><a href="#">About Us</a> </li>
+		<li><a href="#">Blog</a> </li>
+		<li><a href="#">Services</a> </li>
+		<li><a href="#">Product</a> </li>
+		<li><a href="#">Enquiry</a> </li>
+		<li><a href="#">Contact Us</a> </li>
+	</ul>
+</div>
+<div class="slider">
+	
+</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" ></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" ></script>
+<script type="text/javascript" src="js/script.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('.toggle').click(function(){
+			$('.toggle').toggleClass('active');
+			$('.overlay').toggleClass('active');
+			$('.menu').toggleClass('active');
+		})
+	})
+</script>
+</html>
