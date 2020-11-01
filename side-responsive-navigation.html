@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- <link rel="icon" href="images/geo-logo.png" type="image/gif" sizes="150x150"> -->
+	<title>nav</title>
+	<meta charset="utf-8">
+	<!-- Define keywords for search engines: -->
+	<meta name="keywords" content="HTML, CSS, JavaScript">	
+	<!-- Define a description of your web page -->
+	<meta name="description" content="Free Web tutorials for HTML and CSS">
+	<!--Define the author of a page: -->
+	<meta name="author" content="John Doe">
+	<!-- Refresh document every 30 seconds: -->
+	<!-- <meta http-equiv="refresh" content="30"> -->
+	<!-- Setting the viewport to make your website look good on all devices: -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" >
+</head>
+<style type="text/css">
+*{
+    font-family: 'PT Sans', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+nav{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	min-height: 8vh;
+	background-color: #242424;
+}
+.logo{
+	color: #fff;
+	text-transform: uppercase;
+	letter-spacing: 5px;
+	
+}
+.logo h4{
+	font-size: 36px;
+}
+.nav-links{
+	display: flex;
+	justify-content: space-around;
+	width: 60%;
+}
+
+nav ul{
+	margin: 0;
+}
+.nav-links li{
+	list-style: none;
+}
+.nav-links a{
+	color: #fff;
+	text-transform: uppercase;
+	text-decoration: none;
+	letter-spacing: 3px;
+	font-weight: bold;
+	font-size: 14px;
+}
+.burger div{
+	width: 25px;
+	height:  3px;
+	margin: 5px;
+	background-color: #fff;
+	transition: all 0.3s ease;
+}
+.burger{
+	display: none;
+}
+@media screen and (max-width:1024px){
+	
+	.nav-links{
+		width: 75%;
+	}
+}
+@media screen and (max-width:768px){
+	body{
+		overflow-x: hidden;
+	}
+	.nav-links{
+		position: absolute;
+		right: 0;
+		height: 92vh;
+		top: 8vh;
+		width: 40%;
+		background-color: rgba(0,0,0,0.5);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		transform: translateX(100%);
+		transition: transform 0.5s ease-in;
+	}
+	.nav-links li{
+		opacity: 1
+	}
+	.burger{
+		display: block;
+		cursor: pointer;
+	}
+}
+.nav-active{
+	transform: translateX(0%);
+}
+
+@keyframes navLinkfade{
+	from{
+		opacity: 0;
+		transform: translateX(50px);
+	}
+	to{
+		opacity: 1;
+		transform: translateX(0px);
+	}
+}
+.toggle .line1{
+	transform: rotate(-45deg) translate(-5px, 6px);
+	transition: transform 0.5s ease-in;
+}
+.toggle .line2{
+	opacity: 0;
+}
+.toggle .line3{
+	transform: rotate(45deg) translate(-5px, -6px);
+	transition: transform 0.5s ease-in;
+}
+</style>
+<body>
+
+<nav>
+	<div class="logo">
+		<h4>THE NAV</h4>
+	</div>
+	<ul class="nav-links">
+		<li><a href="#">Home</a> </li>
+		<li><a href="#">About Us</a> </li>
+		<li><a href="#">Blog</a> </li>
+		<li><a href="#">Services</a> </li>
+		<li><a href="#">Product</a> </li>
+		<li><a href="#">Enquiry</a> </li>
+		<li><a href="#">Contact Us</a> </li>
+	</ul>
+	<div class="burger">
+		<div class="line1"></div>
+		<div class="line2"></div>
+		<div class="line3"></div>
+	</div>
+</nav>
+
+	
+</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" ></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" ></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('.burger').click(function(){
+			$(this).toggleClass('toggle');
+			$('.nav-links').toggleClass('nav-active');
+		})
+	})
+</script>
+</html>

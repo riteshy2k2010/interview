@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>transform</title>
+</head>
+<body>
+<style>
+*{padding: 0;}
+.base{
+	height: 300px;
+	width: 500px;
+	background-color: grey;
+	perspective: 800px;
+	transform: rotateY(60deg);
+	transform-style: preserve-3d;
+}
+#box{
+	height: 300px;
+	width: 500px;
+	background-color: red;
+	transform: rotateX(60deg);
+	transform-origin: bottom;
+}
+</style>
+<div class="base">
+	<div id="box"> yahoo baba</div>
+	</div>
+</body>
+</html>
