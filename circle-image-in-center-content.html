@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+	<title></title>
+	<style type="text/css">
+	.circle-container {
+        position: relative;
+        width: 24em;
+        height: 24em;
+        padding: 2.8em;
+        /*2.8em = 2em*1.4 (2em = half the width of a link with img, 1.4 = sqrt(2))*/
+        border: dashed 1px;
+        border-radius: 50%;
+        margin: 1.75em auto 0;
+    }
+    .center p{
+    	position: absolute;
+    	top: 50%;
+    	left: 50%;
+    	transform: translate(-50%, -50%);
+    	width: 100%;
+
+    }
+    .circle-container a {
+        display: block;
+        position: absolute;
+        top: 50%; left: 50%;
+        width: 4em; height: 4em;
+        margin: -2em;
+    }
+    .circle-container img { display: block; width: 100%; }
+    .deg0 { transform: translate(12em); } /* 12em = half the width of the wrapper */
+    .deg45 { transform: rotate(45deg) translate(12em) rotate(-45deg); }
+    .deg135 { transform: rotate(135deg) translate(12em) rotate(-135deg); }
+    .deg180 { transform: translate(-12em); }
+    .deg225 { transform: rotate(225deg) translate(12em) rotate(-225deg); }
+    .deg315 { transform: rotate(315deg) translate(12em) rotate(-315deg); }
+    p{
+    	visibility: hidden;
+    }
+    .show{
+    	visibility: visible;
+    }
+	</style>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$(".deg0").hover(function(){
+			$('.c1 p').toggleClass('show');
+		})
+		$(".deg45").hover(function(){
+			$('.c2 p').toggleClass('show');
+		})
+		$(".deg135").hover(function(){
+			$('.c3 p').toggleClass('show');
+		})
+		$(".deg180").hover(function(){
+			$('.c4 p').toggleClass('show');
+		})
+		$(".deg225").hover(function(){
+			$('.c5 p').toggleClass('show');
+		})
+		$(".deg315").hover(function(){
+			$('.c6 p').toggleClass('show');
+		})
+	})
+</script>
+</head>
+<body>
+<div class='circle-container'>
+        <a href='#' class='center'>
+        	<div class="c1">
+        		<p>HI Test 1</p>
+        	</div>
+        	<div class="c2">
+        		<p>HI Test 2</p>
+        	</div>
+        	<div class="c3">
+        		<p>HI Test 3</p>
+        	</div>
+        	<div class="c4">
+        		<p>HI Test 4</p>
+        	</div>
+        	<div class="c5">
+        		<p>HI Test 5</p>
+        	</div>
+        	<div class="c6">
+        		<p>HI Test 6</p>
+        	</div>
+        </a>
+        <a href='#' class='deg0'><img src='C:\Users\Ritesh\Desktop/aadharcard.jpg'></a>
+        <a href='#' class='deg45'><img src='C:\Users\Ritesh\Desktop/aadharcard.jpg'></a>
+        <a href='#' class='deg135'><img src='C:\Users\Ritesh\Desktop/aadharcard.jpg'></a>
+        <a href='#' class='deg180'><img src='C:\Users\Ritesh\Desktop/aadharcard.jpg'></a>
+        <a href='#' class='deg225'><img src='C:\Users\Ritesh\Desktop/aadharcard.jpg'></a>
+        <a href='#' class='deg315'><img src='C:\Users\Ritesh\Desktop/aadharcard.jpg'></a>
+    </div>
+</body>
+</html>
