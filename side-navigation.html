@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sidebar Navigation</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+	<style>
+	
+@media only screen and (max-width: 1768px){
+	*{
+		padding: 0;
+		margin:0;
+		box-sizing: border-box;
+	}
+	
+	html, body{
+		height: 100%;
+		overflow-x: hidden;
+	}
+	.topNav{
+		height: 60px;
+		background-color: #f1c40f;
+		position: fixed;
+		z-index: 10;
+		width: 100%;
+	}
+	.topNav img {
+		float: right;
+		padding-right: 30px;
+	}
+#navigation{
+	position: fixed;
+	margin-top: 60px;
+	left: 0;
+	top: 0;
+	background-color: #e67e22;
+	height: 100%;
+	max-width: 300px;
+	width: 300px;
+	transform: translateX(-300px);
+    transition: transform 300ms ease-in-out;
+}
+	.sidebarMenuIcon{
+		height: 30px;
+		width: 30px;
+		position: absolute;
+		top: 20px;
+		left: 20px;
+		z-index: 99;
+		transition: all 15s;
+	}	
+	.sidebarMenuIcon .bars{
+		width: 30px;
+		height: 3px;
+		background-color: #fff;
+		transition: all 0.3s;		
+		cursor: pointer;
+	}
+	.sidebarMenuIcon .bars.bottom,
+	.sidebarMenuIcon .bars.center{
+		margin-top: 6px;
+	}
+
+#navigation .menu{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+#navigation ul li{
+	border-bottom:1px solid rgba(255,255,255,0.4);
+}
+#navigation ul li a{
+	padding: 20px;
+	color: #fff;
+	display: block;
+	text-transform: uppercase;
+	text-decoration: none;
+	font-weight: bold;
+}
+input#openNav{
+    display: none;
+}
+#openNav:checked ~ #navigation{
+	transform: translateX(0);
+}
+#openNav:checked ~ .sidebarMenuIcon > .bars.center {
+    opacity: 0;
+}
+#openNav:checked ~ .sidebarMenuIcon > .bars.top {
+    transform: rotate(-135deg);
+    margin-top: 12px;
+}
+#openNav:checked ~ .sidebarMenuIcon > .bars.bottom {
+    transform: rotate(135deg);
+    margin-top: -12px;
+}
+
+}
+</style>
+</head>
+<body>
+<header>
+	<div class="topNav"><img src="../images/1.png" height="60px;"></div>
+	<input type="checkbox" id="openNav">
+	<label for="openNav" class="sidebarMenuIcon">
+		<div class="bars top"></div>
+		<div class="bars center"></div>
+		<div class="bars bottom"></div>
+	</label>
+	<div id="navigation">
+		<ul class="menu">
+			<li><a href="#">Home</a> </li>
+			<li><a href="#">About Us</a> </li>
+			<li><a href="#">Services</a> </li>
+			<li><a href="#">Our Protfolio</a> </li>
+			<li><a href="#">Our Blog</a> </li>
+			<li><a href="#">Contact Us</a> </li>
+		</ul>
+	</div>
+</header>
+</body>
+</html>
