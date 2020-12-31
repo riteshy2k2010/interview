@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<style>
+
+*{
+  padding: 0;
+  margin:0;
+  box-sizing: border-box;
+}
+.parallax {
+  background: url('slider.jpg');
+  height: 200vh; 
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Turn off parallax scrolling for tablets and phones. Increase the pixels if needed */
+/*@media only screen and (max-device-width: 1366px) {
+  .parallax {
+    background-attachment: scroll;
+  }
+}*/
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 30px;
+  text-align: center;
+  height: 200VH;
+}
+.flex-item-top{
+  background-color: rgba(0,0,0,0.5);
+  padding: 10px;
+  width: 50%;
+  height:100vh;
+  position: absolute;
+  right: 0;
+  top: 0;
+  align-self: center;
+}
+.flex-item-top h1{
+  color: #fff;
+   position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 12rem;
+  transform: translate(-50%, -50%);
+}
+.flex-item-bottom {
+  background-color: rgba(0,0,0,0.2);
+  padding: 10px;
+  width: 50%;
+  height: 100vh;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.flex-item-bottom h2{
+  color: #fff;
+  font-size: 12rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@media (max-width: 800px) {
+  .flex-item-top, .flex-item-bottom {
+    flex: 100%;
+  }
+}
+</style>
+</head>
+<body>
+<div class="parallax">
+  <div class="flex-container">
+    <div class="flex-item-top">
+      <h1>5</h1>
+    </div>
+    <div class="flex-item-bottom">
+      <h2>2</h2>
+    </div>
+  </div>
+</div>
+<div class="content" id="">
+    <div class="column1">
+       <h1>Content 1</h1>
+    </div>
+    <div class="column2">
+      <div class="content">
+        <h1>Content 2</h1>
+      </div>
+    </div>
+</div>
+<div class="parallax">
+  <div class="flex-container">
+    <div class="flex-item-top">
+      <h1>4</h1>
+    </div>
+    <div class="flex-item-bottom">
+      <h2>6</h2>
+    </div>
+  </div>
+</div>
+
+
+<style>
+.content{
+  height: 100vh;
+}
+
+/* Responsive layout - makes a one column-layout instead of a two-column layout */
+
+</style>
+</body>
+</html>

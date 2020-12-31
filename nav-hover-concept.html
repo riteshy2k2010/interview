@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#drop").hover(function(){
+    
+    // $("#div2").fadeToggle("slow");
+    $("#div2").toggleClass('show');
+    
+  });
+});
+</script>
+</head>
+<body>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-2">
+			<a href="#">
+				<img src="images/logo.png" width="120px">
+			</a>
+		</div>
+		<div class="col-md-10">
+			<nav>
+				<ul class="navbar">
+					<li>
+						<a href="#">Home</a>
+					</li>
+					<li>
+						<a href="#">About</a>
+					</li>
+					<li id="drop">
+						<a href="#" >Products</a>
+						<ul id="div2">
+							<li><a href="#">Link1 </a></li>
+							<li><a href="#">Link2 </a></li>
+							<li><a href="#">Link3 </a></li>
+							<li><a href="#">Link4 </a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">Portfolio</a>
+					</li>
+					<li>
+						<a href="#">Contact U</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+
+<style type="text/css">
+	nav{
+		height: 50px;
+		background:#ccc;
+
+	}
+	ul li a{
+		line-height: 30px;
+	}
+	ul li a:hover{
+		text-decoration: none;
+	}
+	#drop{
+		position: relative;
+	}
+	#div2{
+		position: absolute;
+		display:none;
+		left: -40px;
+		top:30px;
+	}
+	#div2 li{
+		width: 100px;
+		background: #ccc;
+		padding: 5px 20px;
+		text-align: center;
+	}
+	ul li{
+		list-style: none;
+	}
+	.show{
+		display: block !important;
+	}
+</style>
+</body>
+</html>

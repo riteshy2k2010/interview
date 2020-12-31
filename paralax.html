@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>PARALAX</title>
+  <link rel="icon" href="images/logo.png" type="image/gif" sizes="16x16">
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+	<body data-spy="scroll" data-target="#scrollspy" data-offset="50">
+		<style type="text/css">
+			#bgfirst{
+				background:url(images/bg1.jpg);
+				background-attachment: fixed;
+				background-size: cover;
+				height: 200vh;
+				position: relative;
+			}
+			#bgfirst1{
+				background:url(images/bg2.jpg);
+				background-attachment: fixed;
+				background-size: cover;
+				height: 200vh;
+				position: relative;
+			}
+			.content2{
+				height: 100vh;
+				background: red;
+				width: 50%;
+				position: absolute;
+				top: 0;
+				right: 0;
+			}
+			 .heading{
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+			.content3{
+				height: 100vh;
+				background: yellow;
+				width: 50%;
+				position: absolute;
+				bottom:  0;
+				right: 0;
+			}
+			.content1{
+				height: 100vh;
+				width: 50%;
+			}
+			
+		</style>
+		<section style="height: 100vh" id="scrollspy">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6">
+						<img src="images/logo.png" width="120px">
+						<h1 style="color: #000;"><a href="#bgfirst1"> Hello</a> </h1>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="bgfirst">
+			<div class=" justify-content-around mb-3">
+			    <div class="content1"> &nbsp;</div>
+			    <div class="content2" id="ad3">
+			    	<div class="heading" ><a href="#ad"> Hello Hi <span>5</span> Number Changes </a></div>
+			    </div>
+			    <div class="content3" id="ad">
+			    	<div class="heading"><a href="#ad1">Hello Hi <span>5</span> Number Changes </a></div>
+			    </div>
+			</div>
+		</section>
+		<section style="height: 100vh; background: rgba(0,0,0,0.4);">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6">
+						<h1 style="color: #000;"><a href="#bgfirst"> Hello</a> </h1>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="bgfirst1">
+			<div class=" justify-content-around mb-3">
+			    <div class="content1"> &nbsp;</div>
+			    <div class="content2" id="ad1">
+			    	<div class="heading" ><a href="#ad2">Hello Hi <span>5</span> Number Changes</div>
+			    </div>
+			    <div class="content3" id="ad2">
+			    	<div class="heading"><a href="#ad3">Hello Hi <span>5</span> Number Changes</div>
+			    </div>
+			</div>
+		</section>
+		<script type="text/javascript">
+			// Select all links with hashes
+$('a[href*="#"]')
+  // Remove links that don't actually link to anything
+  .not('[href="#"]')
+  .not('[href="#0"]')
+  .click(function(event) {
+    // On-page links
+    if (
+      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+      && 
+      location.hostname == this.hostname
+    ) {
+      // Figure out element to scroll to
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+      // Does a scroll target exist?
+      if (target.length) {
+        // Only prevent default if animation is actually gonna happen
+        event.preventDefault();
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000, function() {
+          // Callback after animation
+          // Must change focus!
+          var $target = $(target);
+          $target.focus();
+          if ($target.is(":focus")) { // Checking if the target was focused
+            return false;
+          } else {
+            $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+            $target.focus(); // Set focus again
+          };
+        });
+      }
+    }
+  });
+
+
+
+		</script>
+	</body>
+</html>
