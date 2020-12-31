@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<style type="text/css">
+div {
+	width: 280px;
+	height: 280px;
+	background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/Harry-Potter-1-.jpg) center center;
+  background-size: cover;
+  transition: all .5s cubic-bezier(1, -1, 0, 2);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+div:hover {
+  clip-path: polygon(0% 100%, 0 0%, 100% 50%);
+}
+
+/* Center the demo */
+html, body { height: 100%; }
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+</style>
+<body>
+<div></div>
+
+</body>
+</html>

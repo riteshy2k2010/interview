@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"  >  
+	
+</head>
+<style>
+
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+   
+}
+.sidenav a{
+
+}
+.sidenav .logo{
+  display: inline-block;
+  position: absolute;
+    top: 10px;
+    left: 10px;
+}
+.sidenav .logo img{
+  height: 40px;
+}
+/*.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+*/
+.sidenav a:hover{
+  color: #f1f1f1;
+}
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+.resNav{
+  font-size:30px;
+  cursor:pointer;
+  color: blue;
+}
+/*********************************/
+/*html, body {
+    font-family: Arial, Helvetica, sans-serif;
+}*/
+
+/* define a fixed width for the entire menu */
+.navigation {
+  width: 300px;
+}
+
+/* reset our lists to remove bullet points and padding */
+.mainmenu, .submenu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.child {
+  position: relative;
+}
+.child ul.submenu a:before{
+  position: absolute;
+  content: '1';
+  top: 10px;
+  right: 0;
+  width:10px;
+  height: 10px;
+  background-color: red;
+
+}
+.mainmenu, .submenu2 {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+/* make ALL links (main and submenu) have padding and background color */
+
+.mainmenu a {
+  display: block;
+  background-color: #CCC;
+  text-decoration: none;
+  padding: 10px;
+  color: #000;
+}
+
+/* add hover behaviour */
+.mainmenu a:hover {
+    background-color: #C5C5C5;
+}
+
+
+/* when hovering over a .mainmenu item,
+  display the submenu inside it.
+  we're changing the submenu's max-height from 0 to 200px;
+*/
+
+.mainmenu li:hover .submenu {
+  display: block;
+  max-height: 200px;
+}
+.mainmenu li:hover .submenu2 {
+  display: block;
+  max-height: 500px;
+}
+
+/*
+  we now overwrite the background-color for .submenu links only.
+  CSS reads down the page, so code at the bottom will overwrite the code at the top.
+*/
+
+.submenu a {
+  background-color: yellow;
+}
+.submenu2 a {
+  background-color: pink;
+}
+
+/* hover behaviour for links inside .submenu */
+.submenu a:hover {
+  background-color: red;
+}
+.submenu2 a:hover {
+  background-color: blue  ;
+}
+
+/* this is the initial state of all submenus.
+  we set it to max-height: 0, and hide the overflowed content.
+*/
+.submenu {
+  overflow: hidden;
+  max-height: 0;
+  -webkit-transition: all 0.5s ease-out;
+}
+.submenu2 {
+  overflow: hidden;
+  max-height: 0;
+  -webkit-transition: all 0.5s ease-out;
+}
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+<span class="resNav" onclick="openNav()">&#9776;</span>
+<nav class="sidenav" id="mySidenav">
+  <a href="#" class="logo"><img src="demo/images/logo.png"  alt=""></a>
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <ul class="mainmenu">
+    <li><a href="">Home</a></li>
+    <li><a href="">About</a></li>
+    <li class="child"><a href="">Products</a>
+      <ul class="submenu">
+        <li><a href="">Tops</a></li>
+        <li><a href="">Bottoms</a></li>
+        <li class="child"><a href="">Footwear </a>
+          <ul class="submenu2">
+            <li><a href="">A1</a></li>
+            <li><a href="">B1</a></li>
+            <li><a href="">C1</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="">Contact us</a></li>
+  </ul>
+</nav>
+<style>
+.checkbox{
+  width: 50px;
+  height: 25px;
+  margin: 0 auto;
+  position: relative;
+}
+.checkbox:before{
+  content: '';
+  background-color: #1d4741;
+  width: 100%;
+  height: 7px;
+  border-radius: 10px;
+  transform: translateY(-50%);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transition: all 0.3s ease 0s;
+}
+.checkbox input[type=checkbox]{
+  margin: 0;
+  visibility: hidden;
+  left: 7px;
+  top: 7px;
+}
+.checkbox label{
+  background-color: #1d4741;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all .3s ease;
+  animation: pulsein .3s;
+}
+.checkbox input[type=checkbox]:checked+label{
+  background-color: #10C298;
+  transform: translateX(25px);
+  animation: pulseout 0.3s;
+}
+@keyframes pulsein{
+  0%,100%{
+    height: 25px;
+    width: 25px;
+    top: 0px;
+  }
+  50%{
+    height: 19px;
+    width: 35px;
+    top: 3px;
+  }
+}
+@keyframes pulseout{
+  0%, 100%{
+    height: 25px;
+    width: 25px;
+    top: 0px;
+  }
+  50%{
+    height: 19px;
+    width: 35px;
+    top: 3px;
+  }
+}
+@media only screen and (max-width:767px){
+  .checkbox{ margin: 0 0 20px; }
+}
+</style>
+<div class="container">
+    <div class="row text-center">
+        <div class="col-sm-3">
+            <div class="checkbox">
+                <input type="checkbox" id="checkbox1" checked="">
+                <label for="checkbox1"></label>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="checkbox">
+                <input type="checkbox" id="checkbox2" checked="">
+                <label for="checkbox2"></label>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="checkbox">
+                <input type="checkbox" id="checkbox3" checked="">
+                <label for="checkbox3"></label>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="checkbox">
+                <input type="checkbox" id="checkbox4" checked="">
+                <label for="checkbox4"></label>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <div  class="sidenav">
+  
+  <a href="#">About</a>
+  <a href="#">Services
+    <ul>
+      <li><a href="#">Link </a> </li>
+      <li><a href="#">Link </a> </li>
+      <li><a href="#">Sub Link </a>
+        <ul>
+          <li><a href="#">Sub Link 2</a></li>
+          <li><a href="#">Sub Link 2</a></li>
+          <li><a href="#">Sub Link 2</a></li>
+          <li><a href="#">Sub Link 2</a></li>
+        </ul> 
+      </li>
+    </ul></a>
+  <a href="#">Clients</a>
+  <a href="#">Contact</a>
+</div> -->
+
+ 
+
+
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "300px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+   
+</body>
+<!-- <script src="https://code.jquery.com/jquery-3.2.1.js"  ></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"  ></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"  ></script> -->
+ 
+</html>

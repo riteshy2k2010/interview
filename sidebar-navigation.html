@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"  >
+	
+</head>
+<style>
+	
+@media only screen and (max-width: 1768px){
+	*{
+		padding: 0;
+		margin:0;
+		box-sizing: border-box;
+	}
+	
+	html, body{
+		height: 100%;
+		overflow-x: hidden;
+	}
+	.topNav{
+		height: 60px;
+		background-color: #f1c40f;
+		position: fixed;
+		z-index: 10;
+		width: 100%;
+	}
+	.topNav img {
+		float: right;
+		padding-right: 30px;
+	}
+
+#navigation{
+	position: fixed;
+	margin-top: 60px;
+	left: 0;
+	top: 0;
+	background-color: #e67e22;
+	height: 100%;
+	max-width: 300px;
+	width: 300px;
+	transform: translateX(-300px);
+    transition: transform 300ms ease-in-out;
+    overflow-y: auto;
+}
+/*scroll Color Start*/
+/* width */
+#navigation::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+#navigation::-webkit-scrollbar-track {
+  background: red;
+}
+
+/* Handle */
+#navigation::-webkit-scrollbar-thumb {
+  background: red;
+}
+
+/* Handle on hover */
+#navigation::-webkit-scrollbar-thumb:hover {
+  background: red;
+}
+
+
+/*scroll Color End*/
+	.sidebarMenuIcon{
+		height: 30px;
+		width: 30px;
+		position: absolute;
+		top: 20px;
+		left: 20px;
+		z-index: 99;
+		transition: all 15s;
+	}	
+	.sidebarMenuIcon .bars{
+		width: 30px;
+		height: 3px;
+		background-color: #fff;
+		transition: all 0.3s;		
+		cursor: pointer;
+	}
+	.sidebarMenuIcon .bars.bottom,
+	.sidebarMenuIcon .bars.center{
+		margin-top: 6px;
+	}
+
+#navigation .menu{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+#navigation ul li{
+	border-bottom:1px solid rgba(255,255,255,0.4);
+}
+#navigation ul li a{
+	padding: 20px;
+	color: #fff;
+	display: block;
+	text-transform: uppercase;
+	text-decoration: none;
+	font-weight: bold;
+}
+input#openNav{
+    display: none;
+}
+#openNav:checked ~ #navigation{
+	transform: translateX(0);
+}
+#openNav:checked ~ .sidebarMenuIcon > .bars.center {
+    opacity: 0;
+}
+#openNav:checked ~ .sidebarMenuIcon > .bars.top {
+    transform: rotate(-135deg);
+    margin-top: 12px;
+}
+#openNav:checked ~ .sidebarMenuIcon > .bars.bottom {
+    transform: rotate(135deg);
+    margin-top: -12px;
+}
+
+}
+.sub_menu{
+	display: none;
+}
+.show{
+	display: block;
+	/*transform: translateX(-300px);*/
+    transition: transform 900ms ease-in-out;
+}
+</style>
+<body>
+<header>
+	<div class="topNav"><img src="../images/1.png" height="60px;"></div>
+	<input type="checkbox" id="openNav">
+	<label for="openNav" class="sidebarMenuIcon">
+		<div class="bars top"></div>
+		<div class="bars center"></div>
+		<div class="bars bottom"></div>
+	</label>
+	<div id="navigation">
+		<ul class="menu">
+			<li><a href="#">Home</a> </li>
+			<li class="dropdown"><a href="#" >About Us</a> 
+				<ul class="sub_menu">
+					<li><a href="#">Sub 1</a></li>
+					<li><a href="#">Sub 1</a></li>
+					<li><a href="#">Sub 1</a></li>
+					<li><a href="#">Sub 1</a></li>
+					<li><a href="#">Sub 1</a></li>
+					<li><a href="#">Sub 1</a></li>
+					<li><a href="#">Sub 1</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Services</a> </li>
+			<li><a href="#">Our Protfolio</a> </li>
+			<li><a href="#">Our Blog</a> </li>
+			<li><a href="#">Contact Us</a> </li>
+		</ul>
+	</div>
+</header>
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.js"  ></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"  ></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"  ></script>
+<script>
+$(document).ready(function () {
+	
+  $('[data-toggle="offcanvas"]').click(function () {
+    $('.fixed-nav-inner').toggleClass('open-nav')
+  });
+  
+});
+$(document).ready(function(){
+	$(".dropdown").click(function(){
+  		$(".sub_menu").toggleClass("show")
+  	});
+});
+</script>
+</html>
