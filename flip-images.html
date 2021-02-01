@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.flip-box{
+	background-color: transparent;
+	perspective: 3000px;
+	height: 400px;
+	width: 400px;
+	margin: 20px auto;
+}
+.flip-inner{
+	position: relative;
+	transition: transform 0.8s;
+	transform-style: preserve-3d;
+	height: 100%;
+	width: 100%;
+}
+.flip-box:hover .flip-inner{
+	transform: rotateY(180deg);
+}
+.back, .front{
+	position: absolute;
+	backface-visibility: hidden;
+	height: 100%;
+	width: 100%;
+	color: white;
+	border-radius: 20px;
+	display: flex;						/*For Center content*/
+	align-items: center;
+	justify-content: space-around;
+}
+.front{
+	background-color: red;
+}
+.back{
+	background-color: green;
+	transform: rotateY(180deg);
+}
+</style>
+</head>
+<body>
+ 
+
+<div class="flip-box">
+	<div class="flip-inner">
+		<div class="front">
+			<h1>Front Side</h1>
+		</div>
+		<div class="back">
+			<h1>Back Side</h1>
+		</div>
+	</div>
+</div>
+</body>
+</html>
