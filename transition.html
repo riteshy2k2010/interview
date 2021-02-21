@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transition</title>
+    <style>
+        .container {
+            height: 350px;
+            border: 2px solid green;
+            display: flex;
+        }
+
+        .box {
+            height: 200px;
+            width: 200px;
+            background-color: red;
+            display: flex;
+            align-self: center;
+            transition: background-color;
+            transition-duration: 2s;
+            transform-origin: left;
+            transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .box:hover{
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box" id="box1"><p>lorem</p></div>
+        <div class="box" id="box2"></div>
+    </div>
+</body>
+
+</html>

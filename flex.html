@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex BOx</title>
+    <style>
+        .container {
+            display: flex;
+            border: 2px solid blue;
+            height: 500px;
+            /* flex-direction: column/row;   for column */
+            /* flex-direction: row-reverse;  row/column rreverse */
+            /* flex-wrap: wrap;   for content break wrap reverse*/
+            /* flex-flow: row-reverse wrap;  both are same*/
+            /* justify-content: center;   horizontal center */
+            /* justify-content: space-between mid same bt left right end no;   */
+            /* justify-content: space-evenly totale same; 15 15 15 15*/
+            /* justify-content: space-around;  last first 15 and iddle 30px */
+            /* align-items: center  vertical center; */
+            /* ************flex container property******************** */
+        }
+
+        .box {
+            height: 200px;
+            width: 100px;
+            background-color: red;
+            border: 2px solid #000;
+            /* flex item propert00y/ */
+        }
+        #flex10 {
+            align-self: flex-end;
+            align-self: center;
+            align-self: flex-start;
+        }
+        #flex1 {
+            /* order: 2; max last */
+            /* flex-grow: 10; max jyada stretch hoga */
+            /* flex-shrink: 5; max ssrink  hoga */
+             flex-basis: 300px; /*when flex direction is set to column  */
+        }
+
+        #flex2 {
+            /* order: 1;   minimum first */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box" id="flex1">1</div>
+        <div class="box" id="flex2"> 2</div>
+        <div class="box" id="flex3">3 </div>
+        <div class="box" id="flex4">4</div>
+        <div class="box" id="flex5">5</div>
+        <div class="box" id="flex6">6</div>
+        <div class="box" id="flex7">7</div>
+        <div class="box" id="flex8">8</div>
+        <div class="box" id="flex9">9</div>
+        <div class="box" id="flex10">10</div>
+    </div>
+</body>
+
+</html>
